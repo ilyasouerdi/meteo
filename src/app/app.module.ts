@@ -1,20 +1,24 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'; 
+import { HttpClientModule } from '@angular/common/http'; 
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { MeteoComponent } from './meteo/meteo.component';
+import { MeteoService } from './services/meteo.service';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+declarations: [
+AppComponent,
+MeteoComponent
+],
+imports: [
+BrowserModule,
+FormsModule, 
+HttpClientModule 
+],
+providers: [MeteoService],
+bootstrap: [AppComponent]
 })
 export class AppModule { }
